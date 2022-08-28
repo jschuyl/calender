@@ -14,6 +14,23 @@ header {
     align-content: center;
     text-align: center;
 }
+input {
+    width:auto;
+    background-color: gray;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+form {
+    display:flex;
+    flex-direction: row;
+    border-radius: 0 5px 5px 0;
+    width: 80%;
+}
+form .hour-box input {
+    display: flex;
+    flex-direction: column;
+}
 .calender{
     display: flex;
     flex-direction: row;
@@ -26,12 +43,16 @@ header {
     background-color: gray;
     border: solid 1px black;
     border-left: none;
+    padding: 0;
+    margin: 0;
 }
-.hour-container{
+.hour-box{
     width: 80%;
     height: 80px;
     border: solid 1px black;
     background-color: beige;
+    margin: 0;
+    padding: 0;
 }
 .save-box{
     width: 10%;
@@ -39,6 +60,13 @@ header {
     background-color: blue;
     border: solid 1px black;
     border-radius: 0 5px 5px 0;
+    color: aliceblue;
+    font-size: 150%;
+}
+.save-box:hover{
+    background-color: aliceblue;
+    cursor: pointer;
+    color: blue;
 }
 .past{
     background-color: gray;
