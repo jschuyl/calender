@@ -1,25 +1,55 @@
 // today displayed
 var now = moment().format('dddd, MMMM Do YYYY');
 $("#now").text(now);
+// getting the current hour
+var timeNow = new Date();
+var currentTime = timeNow.getHours();
+setInterval(currentTime, 1000);
+
+
+let timeArray = ['nine', 'ten', 'eleven', 'twelve', 'one', 'two', 'three', 'four', 'five'];
+
+function saveHourByButton() {
+    for (i = 0; i < timeArray.length; i++) {
+        save = 'save-';
+        buttonId = save + timeArray[i]; // turns it into 'save-[i]'
+        buttonEl = document.getElementById(buttonId);
+        buttonEl.addEventListener('click', saveHourByButton())
+    }
+}
+
 
 function colorCodedTime() {
-    // getting the current hour
-    var timeNow = new Date();
-    var currentTime = timeNow.getHours();
-    setInterval(currentTime, 1000)
-    // defines each hour box in HTML
-    var nine = document.getElementById('nine');
-    var ten = document.getElementById('ten');
-    var eleven = document.getElementById('eleven');
-    var twelve = document.getElementById('twelve');
-    var one = document.getElementById('one');
-    var two = document.getElementById('two');
-    var three = document.getElementById('three');
-    var four = document.getElementById('four');
-    var five = document.getElementById('five');
+for (i = 0; i < timeArray.length; i++) {
+    let htmlId = timeArray[i]; // 
+    hourColor(i + 9, currentTime, htmlId) // i + 9 so that way we match the 24hr set up of time
+}
+    function hourColor(hour, currentTime, htmlId) { // hour = i + 9, defined in parameter of hourColor called in the for loop
+        let currentEl = document.getElementById(htmlId)
+        if (hour < currentTime) {
+            currentEl.classList.add('past') // changes less than current time to past
+        } else if (hour === currentTime) {
+            currentEl.classlist.add('present') // changes current time to present
+        } else {
+            currentEl.classList.add('future') // changes more than current time to future
+        }
+    }
+
     // change hour box color based on time
     // really bulky, but it works.
     // we'll shorten it down later
+    /*
+    // defines each hour box in HTML
+    const nine = document.getElementById('nine');
+    const ten = document.getElementById('ten');
+    const eleven = document.getElementById('eleven');
+    const twelve = document.getElementById('twelve');
+    const one = document.getElementById('one');
+    const two = document.getElementById('two');
+    const three = document.getElementById('three');
+    const four = document.getElementById('four');
+    const five = document.getElementById('five');
+
     console.log(currentTime);
         if (currentTime === 9){
             nine.classList.add('present')
@@ -88,7 +118,7 @@ function colorCodedTime() {
             twelve.classList.add('past')
             one.classList.add('past')
             two.classList.add('past')
-            three.currentTime.add('present')
+            three.classList.add('present')
             four.classList.add('future')
             five.classList.add('future')
         } else if (currentTime === 16){
@@ -111,7 +141,7 @@ function colorCodedTime() {
             three.classList.add('past')
             four.classList.add('past')
             five.classList.add('present')
-        }
+        }*/
 };
 
-console.log(colorCodedTime())
+console.log(colorCodedTime()) // DON'T DELETE only works if here for some reason
