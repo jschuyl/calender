@@ -11,13 +11,21 @@ let timeArray = ['nine', 'ten', 'eleven', 'twelve', 'one', 'two', 'three', 'four
 
 function saveHourByButton() {
     for (i = 0; i < timeArray.length; i++) {
-        save = 'save-';
-        buttonId = save + timeArray[i]; // turns it into 'save-[i]'
-        buttonEl = document.getElementById(buttonId);
-        buttonEl.addEventListener('click', saveHourByButton())
+        const save = 'save-';
+        const buttonId = save + timeArray[i]; // turns it into 'save-[i]'
+        const buttonEl = document.getElementById(buttonId);
+        buttonEl.addEventListener('click', buttonLocalStorage)
+    }
+    function buttonLocalStorage(ev) {
+        clickedButton = ev.target.id;
+        targetInput = clickedButton.replace('save-','');
+        input = document.getElementById(targetInput);
+        input.value;
+        console.log(input.value);
+        localStorage.setItem(targetInput, input.value);
     }
 }
-
+saveHourByButton();
 
 function colorCodedTime() {
 for (i = 0; i < timeArray.length; i++) {
