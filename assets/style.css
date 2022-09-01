@@ -2,7 +2,6 @@
     line-height: 1;
     font-family: Arial, Helvetica, sans-serif;
     width: 960px;
-    max-height: 600px;
     margin: auto;
     padding: 10px;
     box-sizing: border-box;
@@ -14,32 +13,38 @@ header {
     align-content: center;
     text-align: center;
 }
-input {
+/* text box */
+input { 
     width: 80%;
     background-color: gray;
     border: solid 1px black;
     padding: 0;
     margin: 0;
 }
-footer div{
-    height: 80px;
+/* save icon */
+i {
+    width: auto;
 }
-.calender{
+h3 {
+    width: auto;
+    text-align: center;
+}
+.calender {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
-.time{
+.time {
     width: 10%;
     height: 80px;
     font-size: 200%;
-    background-color: gray;
+    background-image: linear-gradient(to right, white, gray);
     border: solid 1px black;
     border-left: none;
     padding: 0;
     margin: 0;
 }
-.hour-box{
+.hour-box {
     width: 80%;
     height: 80px;
     border: solid 1px black;
@@ -47,7 +52,7 @@ footer div{
     margin: 0;
     padding: 0;
 }
-.save-box{
+.save-box {
     width: 10%;
     height: 80px;
     background-color: blue;
@@ -57,24 +62,25 @@ footer div{
     font-size: 150%;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
-.save-box:hover{
+.save-box:hover {
     background-color: aliceblue;
     cursor: pointer;
     color: blue;
 }
-.past{
+.past {
     background-color: gray;
 }
-.present{
+.present {
     background-color: red;
 }
-.future{
+.future {
     background-color: green;
 }
 input[type=text]:hover {
     background-color: lightgray;
 }
-.present:hover{
+.present:hover {
     background-color: pink;
 }

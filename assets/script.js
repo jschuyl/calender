@@ -8,16 +8,16 @@ setInterval(currentTime, 1000);
 
 
 let timeArray = ['nine', 'ten', 'eleven', 'twelve', 'one', 'two', 'three', 'four', 'five'];
-
+// recieved help from a tutor for the following code. I was struggling simplifying into a for loop. used that knowledge and worked it into local storage
 function saveHourByButton() {
     for (i = 0; i < timeArray.length; i++) {
         const save = 'save-';
-        const buttonId = save + timeArray[i]; // turns it into 'save-[i]'
+        const buttonId = save + timeArray[i]; // turns it into 'save-[i]' which corresponds to button ids in HTML
         const buttonEl = document.getElementById(buttonId);
         buttonEl.addEventListener('click', buttonLocalStorage)
     }
-    function buttonLocalStorage(ev) {
-        const clickedButton = ev.target.id;
+    function buttonLocalStorage(event) {
+        const clickedButton = event.target.id;
         const targetInput = clickedButton.replace('save-','');
         const input = document.getElementById(targetInput);
         input.value;
