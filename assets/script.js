@@ -17,15 +17,24 @@ function saveHourByButton() {
         buttonEl.addEventListener('click', buttonLocalStorage)
     }
     function buttonLocalStorage(ev) {
-        clickedButton = ev.target.id;
-        targetInput = clickedButton.replace('save-','');
-        input = document.getElementById(targetInput);
+        const clickedButton = ev.target.id;
+        const targetInput = clickedButton.replace('save-','');
+        const input = document.getElementById(targetInput);
         input.value;
         console.log(input.value);
         localStorage.setItem(targetInput, input.value);
     }
 }
 saveHourByButton();
+
+function loadLocalStorage() {
+    for (i = 0; i < timeArray.length; i++) {
+        const htmlId = timeArray[i];
+        const inputEl = document.getElementById(htmlId);
+        inputEl.value = localStorage.getItem(htmlId);
+    }
+}
+loadLocalStorage();
 
 function colorCodedTime() {
 for (i = 0; i < timeArray.length; i++) {
