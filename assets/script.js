@@ -1,6 +1,6 @@
 // today displayed
 var now = moment().format('dddd, MMMM Do YYYY');
-$("#now").text(now);
+$("#currentDay").text(now);
 // getting the current hour
 var timeNow = new Date();
 var currentTime = timeNow.getHours();
