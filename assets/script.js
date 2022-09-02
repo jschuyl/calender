@@ -6,8 +6,6 @@ var timeNow = new Date();
 var currentTime = timeNow.getHours();
 setInterval(currentTime, 1000);
 
-currentTime = 13
-
 let timeArray = ['nine', 'ten', 'eleven', 'twelve', 'one', 'two', 'three', 'four', 'five'];
 // recieved help from a tutor for the following code. I was struggling simplifying into a for loop. used that knowledge and worked it into local storage
 function saveHourByButton() {
