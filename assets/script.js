@@ -6,6 +6,7 @@ var timeNow = new Date();
 var currentTime = timeNow.getHours();
 setInterval(currentTime, 1000);
 
+currentTime = 13
 
 let timeArray = ['nine', 'ten', 'eleven', 'twelve', 'one', 'two', 'three', 'four', 'five'];
 // recieved help from a tutor for the following code. I was struggling simplifying into a for loop. used that knowledge and worked it into local storage
@@ -18,10 +19,9 @@ function saveHourByButton() {
     }
     function buttonLocalStorage(event) {
         const clickedButton = event.target.id;
-        const targetInput = clickedButton.replace('save-','');
-        const input = document.getElementById(targetInput);
+        const targetInput = clickedButton.replace('save-',''); // this is so cool, replaces 'save-' in button ids with nothing, which just turns it into the input ids in timeArray
+        const input = document.getElementById(targetInput); 
         input.value;
-        console.log(input.value);
         localStorage.setItem(targetInput, input.value);
     }
 }
@@ -38,7 +38,7 @@ loadLocalStorage();
 
 function colorCodedTime() {
 for (i = 0; i < timeArray.length; i++) {
-    let htmlId = timeArray[i]; // 
+    let htmlId = timeArray[i]; 
     hourColor(i + 9, currentTime, htmlId) // i + 9 so that way we match the 24hr set up of time
 }
     function hourColor(hour, currentTime, htmlId) { // hour = i + 9, defined in parameter of hourColor called in the for loop
@@ -46,7 +46,7 @@ for (i = 0; i < timeArray.length; i++) {
         if (hour < currentTime) {
             currentEl.classList.add('past') // changes less than current time to past
         } else if (hour === currentTime) {
-            currentEl.classlist.add('present') // changes current time to present
+            currentEl.classList.add('present') // changes current time to present
         } else {
             currentEl.classList.add('future') // changes more than current time to future
         }
@@ -161,4 +161,4 @@ for (i = 0; i < timeArray.length; i++) {
         }*/
 };
 
-console.log(colorCodedTime()) // DON'T DELETE only works if here for some reason
+colorCodedTime()
